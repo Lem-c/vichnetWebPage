@@ -8,7 +8,7 @@
     <!-- -->
     <div class="sidebar-wrapper" id="style-3">
       <div class="logo">
-        <a href="http://www.creative-tim.com"
+        <a href="http://www.vichnet.cn"
            aria-label="sidebar mini logo"
            class="simple-text logo-mini">
           <div class="logo-img"
@@ -18,9 +18,9 @@
               alt="">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <p class="simple-text logo-normal">
           {{title}}
-        </a>
+        </p>
       </div>
       <slot>
 
@@ -50,7 +50,7 @@
       },
       backgroundColor: {
         type: String,
-        default: ""
+        default: "vue"
       },
       activeColor: {
         type: String,
