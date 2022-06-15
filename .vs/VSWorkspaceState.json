@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\SidebarPlugin",
+    "\\src\\directives",
+    "\\src\\layout",
+    "\\src\\locales",
+    "\\src\\pages",
+    "\\src\\pages\\Dashboard",
+    "\\src\\pages\\Notifications"
+  ],
+  "SelectedNode": "\\src\\components\\Modal.vue",
+  "PreviewInSolutionExplorer": false
+}
