@@ -1,31 +1,48 @@
 <template>
 
-  <div class="op-box">
+  <div class="op-box" :class="{'alert':alertColor}">
 
-    <div class="buttons">
-      <div class="col-md-2">
-        <base-button type="info" block @click="notifyVue('top', 'center')">安全边界规划</base-button>
+    <div class="row ml-auto">
+      <div class="col-lg-8 col-md-12">
+        <card>
+          <img src="img/videoImg.png" />
+        </card>
+      </div>
+      <!--buttons-->
+
+      <div class="col-md-4">
+        <card>
+          <div class="row">
+            <div class="col-lg-8 ml-auto mr-auto">
+              <div class="coloum">
+                <div class="col-md-6" style="margin-top:35px">
+                  <base-button type="info" block>安全边界规划</base-button>
+                </div>
+                <div class="col-md-6" style="margin-top:35px">
+                  <base-button type="info" block @click="notifyVue('top', 'center')">重置安全边界</base-button>
+                </div>
+                <div class="col-md-6" style="margin-top:35px">
+                  <base-button type="info" block>修改边界规划</base-button>
+                </div>
+              </div>
+
+              <div class="coloum">
+                <div class="col-md-6" style="margin-top:35px">
+                  <base-button type="info" block>安全边界取反</base-button>
+                </div>
+                <div class="col-md-6" style="margin-top:35px">
+                  <base-button type="primary" block @click="alertbtn">警示灯</base-button>
+                </div>
+                <div class="col-md-6" style="margin-top:35px; margin-bottom:50px">
+                  <base-button type="info" block>声音开/关</base-button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </card>
       </div>
 
-      <div class="col-md-2" style="margin-top:30px">
-        <base-button type="info" block @click="notifyVue('top', 'center')">重置安全边界</base-button>
-      </div>
-
-      <div class="col-md-2" style="margin-top:30px">
-        <base-button type="info" block @click="notifyVue('top', 'center')">修改边界规划</base-button>
-      </div>
-
-      <div class="col-md-2" style="margin-top:30px">
-        <base-button type="info" block @click="notifyVue('top', 'center')">安全边界取反</base-button>
-      </div>
-
-      <div class="col-md-2" style="margin-top:30px">
-        <base-button type="info" block @click="notifyVue('top', 'center')">警示灯</base-button>
-      </div>
-
-      <div class="col-md-2" style="margin-top:30px">
-        <base-button type="info" block @click="notifyVue('top', 'center')">声音开/关</base-button>
-      </div>
     </div>
 
   </div>
@@ -42,6 +59,7 @@
     },
     data() {
       return {
+        alertColor: false,
         type: ["", "info", "success", "warning", "danger"],
         notifications: {
           topCenter: false
@@ -59,6 +77,9 @@
           type: this.type[color],
           timeout: 0
         });
+      },
+      alertbtn() {
+        this.alertColor = true;
       }
     }
   };

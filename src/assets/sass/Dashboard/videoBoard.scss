@@ -1,10 +1,9 @@
-$alert-border: 3px solid #DC143C;
-$normal-border: 2px solid #00FF00;
+$alert-border: 10px solid #DC143C;
+$normal-border: 10px solid #00FF00;
 
 .op-box {
   border: $normal-border;
-  max-height:1080px;
-  max-width:1920px;
+  max-width: 2560px;
   overflow: auto;
 }
 
@@ -12,7 +11,4 @@ $normal-border: 2px solid #00FF00;
 border: $alert-border;
 }
 
-.buttons {
-  overflow: auto;
-  line-height: 400px;
-}
+

@@ -1,5 +1,5 @@
 <template>
-  <div> 警告 </div>
+  <div> 安全边界已重置 </div>
 </template>
 
 <script>

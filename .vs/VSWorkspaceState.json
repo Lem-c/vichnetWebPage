@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
+    "\\src\\assets\\css",
+    "\\src\\assets\\sass",
+    "\\src\\assets\\sass\\Dashboard",
     "\\src\\components",
-    "\\src\\components\\SidebarPlugin",
-    "\\src\\directives",
     "\\src\\layout",
-    "\\src\\locales",
+    "\\src\\layout\\dashboard",
     "\\src\\pages",
-    "\\src\\pages\\Dashboard",
     "\\src\\pages\\Notifications"
   ],
-  "SelectedNode": "\\src\\components\\Modal.vue",
+  "SelectedNode": "\\src\\layout\\dashboard\\TopNavbar.vue",
   "PreviewInSolutionExplorer": false
 }
