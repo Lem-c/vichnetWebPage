@@ -1,37 +1,24 @@
-const webpack = require('webpack');
-
-module.exports = {
-  lintOnSave: false,
-  configureWebpack: {
-    // Set up all the aliases we use in our app.
-    resolve: {
-      alias: {
-        'chart.js': 'chart.js/dist/Chart.js'
-      }
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: [
+    'vuetify'
+  ],
+  // 基本路径
+  outputDir: './dist',
+  // 生产环境是否生成 sourceMap 文件
+  productionSourceMap: false,
+  // 服务器端口号
+  devServer: {
+    port: 8080,
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:5000',
+        changeOrigin: true,
+        ws: true,
+        pathRewrite: {
+          '^/api': 'api',
+        },
+      },
     },
-    plugins: [
-      new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 6
-      })
-    ]
   },
-  pwa: {
-    name: 'Dashboard',
-    themeColor: '#344675',
-    msTileColor: '#344675',
-    appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: '#344675'
-  },
-  pluginOptions: {
-    i18n: {
-      locale: 'en',
-      fallbackLocale: 'en',
-      localeDir: 'locales',
-      enableInSFC: false
-    }
-  },
-  css: {
-    // Enable CSS source maps.
-    sourceMap: process.env.NODE_ENV !== 'production'
-  }
-};
+})

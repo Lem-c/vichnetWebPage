@@ -1,18 +1,24 @@
-# VichnetWebPage
-Modul process web page demo
+# vichnet_dangerzone_gui
 
-Using vue template vue-black-dashboard-master
-
-Note that Node version is $\color{red}{14}$
-
-Easy install
-
+## Project setup
 ```
 yarn install
 ```
 
-run local server
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
+### Compiles and minifies for production
 ```
-yarn run dev
+yarn build
 ```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

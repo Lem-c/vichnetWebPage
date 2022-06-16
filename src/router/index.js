@@ -1,17 +1,19 @@
-import VueRouter from "vue-router";
-import routes from "./routes";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-// configure router
+Vue.use(VueRouter)
+
+const routes = [
+  {
+    path: '/',
+    name: 'Index',
+    component: () => import('../views/index.vue')
+  },
+]
+
 const router = new VueRouter({
-  routes, // short for routes: routes
-  linkExactActiveClass: "active",
-  scrollBehavior: (to) => {
-    if (to.hash) {
-      return {selector: to.hash}
-    } else {
-      return { x: 0, y: 0 }
-    }
-  }
-});
+  mode: 'history',
+  routes
+})
 
-export default router;
+export default router
