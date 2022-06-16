@@ -1,18 +1,25 @@
 <template>
-  <v-container class="index">
+    <el-header>
+        <div>
+            <img src="../assets/vich_icon.png" alt="" height="50px" />
+            <span>EN-CH</span>
+        </div>
+    </el-header>
+<!--    <v-container class="index">
     <v-row align="center" justify="space-around" style="margin-top: 20px">
-      <v-btn depressed @click="addAnchor"> Normal </v-btn>
-      <v-btn depressed color="primary"> Primary </v-btn>
-      <v-btn depressed color="error"> Error </v-btn>
-      <v-btn depressed disabled> Disabled </v-btn>
+        <v-btn depressed @click="addAnchor"> Normal </v-btn>
+        <v-btn depressed color="primary"> Primary </v-btn>
+        <v-btn depressed color="error"> Error </v-btn>
+        <v-btn depressed disabled> Disabled </v-btn>
     </v-row>
 
     <v-stage ref="stage" :config="stageConfig"> </v-stage>
-  </v-container>
+    </v-container>-->
 </template>
 
 <script>
-import Konva from 'konva'
+import Konva from 'konva';
+
 const width = window.innerWidth * 0.9
 const height = window.innerHeight * 0.9
 
