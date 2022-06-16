@@ -3,7 +3,7 @@ Modul process web page demo
 
 Using vue template vue-black-dashboard-master
 
-Note that $\color{red}{Node version is 14}$
+Note that Node version is $\color{red}{14}$
 
 Easy install
 
