@@ -1,4 +1,5 @@
 <template>
+  <!--Control all layout elements-->
   <div class="wrapper">
     <side-bar>
       <template slot="links">
@@ -17,8 +18,10 @@
     </div>
   </div>
 </template>
+
 <style lang="scss">
 </style>
+
 <script>
 import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";

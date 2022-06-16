@@ -2,6 +2,7 @@
   <div class="content">
     <fade-transition :duration="100" mode="out-in">
       <!-- your content here -->
+      <!--Overwirte all templates-->
       <router-view></router-view>
     </fade-transition>
   </div>

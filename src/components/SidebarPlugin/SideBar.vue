@@ -18,13 +18,15 @@
               alt="">
           </div>
         </a>
-        <p class="simple-text logo-normal">
+        <a href="http://www.vichnet.cn" class="simple-text logo-normal">
           {{title}}
-        </p>
+        </a>
       </div>
+
       <slot>
 
       </slot>
+
       <ul class="nav">
         <!--By default vue-router adds an active class to each route link. This way the links are colored when clicked-->
         <slot name="links">
@@ -36,9 +38,11 @@
           </sidebar-link>
         </slot>
       </ul>
+
     </div>
   </div>
 </template>
+
 <script>
   import SidebarLink from "./SidebarLink";
 
