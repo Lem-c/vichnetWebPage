@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <notifications></notifications>
     <router-view :key="$route.fullPath"></router-view>
   </div>

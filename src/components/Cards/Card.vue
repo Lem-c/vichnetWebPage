@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="[type && `card-${type}`]">
+  <div id="short" class="card" :class="[type && `card-${type}`]">
     <div class="card-image" v-if="$slots.image">
       <slot name="image"></slot>
     </div>
@@ -53,4 +53,7 @@
   };
 </script>
 <style>
+#short{
+  margin: 0;
+}
 </style>

@@ -1,0 +1,101 @@
+body {
+  background: linear-gradient(90deg, rgba(165, 165, 165, 0.03) 0%, rgba(165, 165, 165, 0.03) 8%, rgba(235, 235, 235, 0.03) 8%, rgba(235, 235, 235, 0.03) 9%, rgba(7, 7, 7, 0.03) 9%, rgba(7, 7, 7, 0.03) 14%, rgba(212, 212, 212, 0.03) 14%, rgba(212, 212, 212, 0.03) 17%, rgba(219, 219, 219, 0.03) 17%, rgba(219, 219, 219, 0.03) 95%, rgba(86, 86, 86, 0.03) 95%, rgba(86, 86, 86, 0.03) 100%), linear-gradient(67.5deg, rgba(80, 80, 80, 0.03) 0%, rgba(80, 80, 80, 0.03) 11%, rgba(138, 138, 138, 0.03) 11%, rgba(138, 138, 138, 0.03) 17%, rgba(122, 122, 122, 0.03) 17%, rgba(122, 122, 122, 0.03) 24%, rgba(166, 166, 166, 0.03) 24%, rgba(166, 166, 166, 0.03) 27%, rgba(245, 245, 245, 0.03) 27%, rgba(245, 245, 245, 0.03) 89%, rgba(88, 88, 88, 0.03) 89%, rgba(88, 88, 88, 0.03) 100%), linear-gradient(67.5deg, rgba(244, 244, 244, 0.03) 0%, rgba(244, 244, 244, 0.03) 4%, rgba(16, 16, 16, 0.03) 4%, rgba(16, 16, 16, 0.03) 10%, rgba(157, 157, 157, 0.03) 10%, rgba(157, 157, 157, 0.03) 20%, rgba(212, 212, 212, 0.03) 20%, rgba(212, 212, 212, 0.03) 83%, rgba(5, 5, 5, 0.03) 83%, rgba(5, 5, 5, 0.03) 84%, rgba(237, 237, 237, 0.03) 84%, rgba(237, 237, 237, 0.03) 100%), linear-gradient(90deg, #FFF, #FFF);
+  height: 94vh;
+}
+
+.fancy {
+  font-family: '宋体', serif;
+}
+
+.gb {
+  padding: 8px 20px;
+  margin-right: 25px;
+  cursor: pointer;
+  font-size: 60px;
+  border-radius: 10px;
+  border-width: 100px;
+
+  font-weight: 700;
+  text-align: center;
+}
+
+.gb-bordered {
+  padding: 6px 20px;
+  position: relative;
+  border: 8px solid transparent;
+  background-clip: padding-box;
+  transition: .5s all;
+}
+.gb-bordered:after {
+  transition: .5s all;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  content: '';
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.gb-rounded {
+  border-radius: 50px;
+}
+.gb-rounded.gb-bordered:after {
+  border-radius: 50px;
+}
+
+.hover-fill {
+  transition: .6s all;
+}
+.hover-fill:hover {
+  background-color: transparent;
+  color: white;
+}
+.hover-fill.reverse {
+  background-color: transparent;
+  color: #9A9A9A;
+}
+.hover-fill.reverse:hover {
+  background-color: #9A9A9A;
+  color: #1a1e34;
+}
+
+.hover-slide {
+  transition: .6s all;
+}
+.hover-slide:after {
+  background-size: 200% 100%;
+  background-position: 0% 0;
+}
+.hover-slide:hover:after {
+  background-position: 100% 0;
+}
+
+#gb11:after {
+  background-image: linear-gradient(135deg, #8ae553 0%, #8ae553 22%, #6ecb47 22%, #6ecb47 28%, #53b03b 28%, #53b03b 72%, #37962f 72%, #37962f 100%);
+}
+
+
+.parent {
+  transform:scale(0.25);
+  position: relative;
+  left: 255px;
+  top: -905px;
+
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 80px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 3 / 1 / 4 / 2; }
+.div4 { grid-area: 4 / 1 / 5 / 2; }
+.div5 { grid-area: 5 / 1 / 6 / 2; }
+.div6 { grid-area: 6 / 1 / 7 / 2; }
+.div7 { grid-area: 7 / 1 / 8 / 2; }
+.div8 { grid-area: 8 / 1 / 9 / 2; }
