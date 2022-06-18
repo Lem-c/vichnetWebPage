@@ -12,3 +12,10 @@
     }
 
 </script>
+
+<style>
+   span{
+       margin-left: 200px;
+   }
+
+</style>
