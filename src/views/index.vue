@@ -1,5 +1,5 @@
 <template>
-    <v-container class="index" style="max-height: 600px; max-width: 800px" @touchmove.prevent @mousewheel.prevent>
+    <v-container class="index" style="max-height: 550px; max-width: 800px" @touchmove.prevent @mousewheel.prevent>
         <!--
         <v-row align="center" justify="space-around" style="margin-top: 40px">
             <v-btn depressed @click="addAnchor"> Normal </v-btn>
@@ -10,20 +10,21 @@
         -->
 
 
-        <v-row class="cConten" style=" height: 550px; margin-top: 10px">
+        <v-row class="cConten" style="height: 400px; margin-top: 10px">
+            <v-col cols="8">
+                <v-img :aspect-ratio="16/9"
+                       max-height="400" max-width="550"
+                       src="../assets/videoImg.png" elevation="5"
+                       style="margin-left: 20px"></v-img>
+            </v-col>
 
-            <v-img :aspect-ratio="16/9"
-                      max-height="400" max-width="550"
-                    src="../assets/videoImg.png" elevation="5"
-                   style="margin-left: 20px"></v-img>
-
-            <v-card elevation="5" width="220" max-height="400">
-
-<!--                <v-btn elevation="2" depressed outlined raised small> Draw </v-btn>
-                <v-btn depressed disabled small> Disabled </v-btn>-->
-
-            </v-card>
-
+            <v-col cols="2">
+                <v-btn color="primary">  </v-btn>
+                <v-btn color="primary">  </v-btn>
+                <v-btn color="primary">  </v-btn>
+                <v-btn color="primary">  </v-btn>
+                <v-btn disabled> </v-btn>
+            </v-col>
         </v-row>
 
         <v-bottom-navigation absolute>
@@ -33,7 +34,6 @@
             </v-col>
         </v-bottom-navigation>
 
-        <v-stage ref="stage" :config="stageConfig"> </v-stage>
     </v-container>
 </template>
 
@@ -52,7 +52,21 @@ export default {
 <style scoped>
     .v-btn {
         text-transform: none;
-        min-width: 0;
-        text-align: center;
+        text-align: left;
+        margin-bottom:20px;
+    }
+
+    v-btn {
+        max-width: 50px;
+        margin-bottom:30px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0;
     }
 </style>
