@@ -6,18 +6,18 @@
 </template>
 
 <script>
-    import appHeader from "./components/appHeader.vue"
+import appHeader from "./components/appHeader.vue"
 
 export default {
-    name: 'App',
+  name: 'App',
 
-    components:{
-        appHeader,
-    },
+  components:{
+    appHeader,
+  },
 
-    data: () => ({
-    //
-    })
+  data: () => ({
+  //
+  })
 };
 </script>
 

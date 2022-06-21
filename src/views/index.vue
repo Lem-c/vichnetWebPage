@@ -10,10 +10,10 @@
         -->
 
 
-        <v-row class="cConten" style="height: 400px; margin-top: 10px">
+        <v-row class="cConten" style="height: 550px; margin-top: 10px">
             <v-col cols="8">
                 <v-img :aspect-ratio="16/9"
-                       max-height="400" max-width="550"
+                       max-height="550" max-width="550"
                        src="../assets/videoImg.png" elevation="5"
                        style="margin-left: 20px"></v-img>
             </v-col>
@@ -29,8 +29,13 @@
 
         <v-bottom-navigation absolute>
             <v-col class="text-center"
-                    cols="12">
-                {{ new Date().getFullYear() }} <strong>Time</strong>
+                   cols="2">
+                XX
+            </v-col>
+
+            <v-col class="text-center"
+                   cols="2">
+                <strong>Time :</strong>
             </v-col>
         </v-bottom-navigation>
 
