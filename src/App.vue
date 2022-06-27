@@ -1,28 +1,18 @@
 <template>
-  <v-app>
-    <appHeader/>
-    <router-view/>
-  </v-app>
+  <HomeView></HomeView>
 </template>
 
 <script>
-import appHeader from "./components/appHeader.vue"
+import HomeView from "@/views/HomeView";
 
 export default {
   name: 'App',
-
   components:{
-    appHeader,
+    HomeView,
   },
 
   data: () => ({
-  //
-  })
+    //
+  }),
 };
 </script>
-
-<style scoped>
-.theme--dark.v-application {
-  background: #393a3a
-}
-</style>
