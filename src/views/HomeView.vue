@@ -125,13 +125,15 @@
 <script>
 import appHeader from "@/components/appHeader";
 import appFooter from "@/components/appFooter";
+import jq from "@/components/jquaryJS.vue";
 
 export default {
   name: 'Home',
 
   components: {
     appHeader,
-    appFooter
+    appFooter,
+    jq
   },
   data () {
     return {
