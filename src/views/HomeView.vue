@@ -9,6 +9,9 @@
       <v-row style="height: 376px">
         <v-col cols="8" class="pt-10">
           <v-img :aspect-ratio="16/9" src="../assets/videoImg.png"/>
+
+          <canvas id="canvas" width="510px" height="286px"></canvas>
+          <canvas id="canvasSave" width="510px" height="286px"></canvas>
         </v-col>
 
       </v-row>
@@ -125,7 +128,8 @@
 <script>
 import appHeader from "@/components/appHeader";
 import appFooter from "@/components/appFooter";
-import jq from "@/components/jquaryJS.vue";
+//import jq from "@/components/jquaryJS.vue";
+//import * as drawer from "../assets/js/shapeMethods.js";
 
 export default {
   name: 'Home',
@@ -133,7 +137,6 @@ export default {
   components: {
     appHeader,
     appFooter,
-    jq
   },
   data () {
     return {
@@ -186,5 +189,19 @@ export default {
     position: relative;
     top: 140px;
     left: 146px;
+  }
+
+  #canvas{
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    z-index: 1;
+    cursor: crosshair;
+  }
+
+  #canvasSave{
+    position: absolute;
+    left: 15px;
+    top: 40px;
   }
 </style>

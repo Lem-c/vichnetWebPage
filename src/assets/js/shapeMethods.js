@@ -1,7 +1,8 @@
-var can = document.getElementById("canvas");  //Get canvas named canvas
+var can = document.getElementById("canvas");  //Get canvas
 var ctx = can.getContext('2d');
 var canSave = document.getElementById("canvasSave");  //Get saved canvas
 var ctxSave = canSave.getContext('2d');
+var canDraw = false;    //trigger state
 
 var pointX, pointY;
 var pointArr = [];//Array saves the coordinates
@@ -23,30 +24,30 @@ $(can).click(function (e) {
       if(oIndex > 0 && pointArr.length > 0){
           piX = pointArr[0].x;
           piY = pointArr[0].y;
-          //画点
+          //draw points
           makearc(ctx, piX, piY, GetRandomNum(2, 2), 0, 180, 'rgba(255,105,180,1)');
           pointArr.push({x: piX, y: piY});
-          canvasSave(pointArr);//保存点线同步到另一个canvas
-          saveCanvas();//生成画布
+          canvasSave(pointArr);//save points and lines to another canvas
+          saveCanvas();//Generate canvas
       }else {
           piX = pointX;
           piY = pointY;
           makearc(ctx, piX, piY, GetRandomNum(2, 2), 0, 180, 'rgba(255,105,180,1)');
           pointArr.push({x: piX, y: piY});
-          canvasSave(pointArr);//保存点线同步到另一个canvas
+          canvasSave(pointArr);//sync points and lines
       }
   }
 });
 
-/*  */
+/*After clicked once*/
 $(can).mousemove(function (e) {
   if (e.offsetX || e.layerX) {
       pointX = e.offsetX == undefined ? e.layerX : e.offsetX;
       pointY = e.offsetY == undefined ? e.layerY : e.offsetY;
       var piX,piY;
-      /*清空画布*/
+      /*Clean the canvas*/
       ctx.clearRect(0, 0, can.width, can.height);
-      /*鼠标下跟随的圆点*/
+      /*Following points*/
       makearc(ctx, pointX, pointY, GetRandomNum(4, 4), 0, 180, 'rgba(255,105,180,1)');
 
       if (pointArr.length > 0) {
@@ -63,7 +64,7 @@ $(can).mousemove(function (e) {
               piY = pointY;
               oIndex = -1;
           }
-          /*开始绘制*/
+          /*Start the draw process*/
           ctx.beginPath();
           ctx.moveTo (pointArr[0].x, pointArr[0].y);
           if (pointArr.length > 1){
@@ -72,63 +73,66 @@ $(can).mousemove(function (e) {
               }
           }
           ctx.lineTo(piX, piY);
-          ctx.fillStyle = 'rgba(220,20,60,1)';//填充颜色
-          ctx.fill();//填充
-          ctx.stroke();//绘制
+          ctx.fillStyle = 'rgba(220,20,60,1)';//Fill color
+          ctx.fill();//Fill the close area
+          ctx.stroke();//Draw
       }
   }
 });
 
-// 存储已生成的点线
-function canvasSave(pointArr){
+/*Clean the selected area*/
+$('#items[3]').click(function () {
+  ctx.clearRect(0, 0, can.width, can.height);
+  ctxSave.clearRect(0, 0, canSave.width, canSave.height);
+  pointArr = [];
+});
+
+//Save the generated points and lines
+export function canvasSave(pointArr){
   ctxSave.clearRect(0, 0, ctxSave.width, ctxSave.height);
   ctxSave.beginPath();
   if (pointArr.length > 1){
       ctxSave.moveTo (pointArr[0].x, pointArr[0].y);
       for (var i = 1; i < pointArr.length; i++){
           ctxSave.lineTo(pointArr[i].x, pointArr[i].y);
-          ctxSave.fillStyle = 'rgba(220,20,60,1)';//填充颜色
+          ctxSave.fillStyle = 'rgba(220,20,60,1)';
           //ctxSave.fill();
-          ctxSave.stroke();//绘制
+          ctxSave.stroke();//Re-draw
       }
       ctxSave.closePath();
   }
 }
 
-/*生成画布 结束绘画*/
-function saveCanvas() {
+/*Generate a canva and end drawing*/
+export function saveCanvas() {
   ctx.clearRect(0, 0, can.width, can.height);
-  ctxSave.closePath();//结束路径状态，结束当前路径，如果是一个未封闭的图形，会自动将首尾相连封闭起来
-  ctxSave.fill();//填充
-  ctxSave.stroke();//绘制
+  ctxSave.closePath();//End the path state. Connect the head and tail to get a close shape.
+  ctxSave.fill();//Fill the shape
+  ctxSave.stroke();//Re-draw
   pointArr = [];
 }
 
-/*清空选区*/
-$('#deleteCanvas').click(function () {
-  ctx.clearRect(0, 0, can.width, can.height);
-  ctxSave.clearRect(0, 0, canSave.width, canSave.height);
-  pointArr = [];
-});
-
-/*验证canvas画布是否为空函数*/
-function isCanvasBlank(canvas) {
+/*Whether this canva is empty*/
+export function isCanvasBlank(canvas) {
   var blank = document.createElement('canvas');//创建一个空canvas对象
   blank.width = canvas.width;
   blank.height = canvas.height;
   return canvas.toDataURL() == blank.toDataURL();//为空 返回true
 }
 
-/*canvas生成圆点*/
-function GetRandomNum(Min, Max) {
+/*canvas generates the circle*/
+export function GetRandomNum(Min, Max) {
   var Range = Max - Min;
   var Rand = Math.random();
   return (Min + Math.round(Rand * Range));
 }
-function makearc(ctx, x, y, r, s, e, color) {
-  ctx.clearRect(0, 0, 199, 202);//清空画布
+
+export function makearc(ctx, x, y, r, s, e, color) {
+  ctx.clearRect(0, 0, 199, 202);//clean
   ctx.beginPath();
   ctx.fillStyle = color;
   ctx.arc(x, y, r, s, e);
   ctx.fill();
 }
+
+export{can,ctx,canSave,ctxSave};
